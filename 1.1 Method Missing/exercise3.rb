@@ -6,5 +6,6 @@
 # &block. Therefore your signature now looks like method_missing(sym, *args, &block).
 
 class Spy
-    # Write your code here
+    def method_missing(sym, *args, &block)
+    end
 end
