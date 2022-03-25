@@ -4,5 +4,9 @@
 # the meaning of the universe", and "I know the meaning of everything", respectively.
 
 class Monk
-    # put your code here
+    ["life", "the_universe","everything"].each do |action|
+      define_method("meditate_on_" + action) do
+        return "I know the meaning of #{action.gsub("_"," ")}"
+      end
+    end
 end
