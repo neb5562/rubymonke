@@ -12,6 +12,14 @@ def auto_complete(editor)
     if word == "\n"
       throw :eol
     end
+      if editor.template.user_classes.include? word
+        l = eval(word.to_s).methods
+        build_suggestion(l)
+    end
+      if editor.template.context.methods.include? word
+        l = editor.template.context.method(word).parameters
+        build_suggestion(l)
+      end
     # define the other two filters like the above. 
 	end
 end
