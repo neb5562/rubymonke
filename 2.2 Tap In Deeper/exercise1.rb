@@ -4,8 +4,6 @@
 # The editor object might be constructed something like this
 # e = Editor.new("class Foo; end")
 
-# The editor object might be constructed something like this
-# e = Editor.new("class Foo; end")
 e = Editor.new("class Foo; end")
 
 def auto_complete(e)
