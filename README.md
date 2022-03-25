@@ -1,1 +1,1 @@
-"# rubymonke" 
+# rubymonke
