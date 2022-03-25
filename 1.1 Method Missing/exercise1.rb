@@ -8,5 +8,6 @@
 
 
 class Spy
-    # Write your code here
+    def method_missing sym
+    end
 end
