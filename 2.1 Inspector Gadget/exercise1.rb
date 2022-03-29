@@ -13,12 +13,12 @@ def auto_complete(editor)
       throw :eol
     end
       if editor.template.user_classes.include? word
-        l = eval(word.to_s).methods
-        build_suggestion(l)
+        methods = eval(word.to_s).methods
+        build_suggestion(methods)
     end
       if editor.template.context.methods.include? word
-        l = editor.template.context.method(word).parameters
-        build_suggestion(l)
+        methods = editor.template.context.method(word).parameters
+        build_suggestion(methods)
       end
     # define the other two filters like the above. 
 	end
