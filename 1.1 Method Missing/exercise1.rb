@@ -5,8 +5,6 @@
 # one argument (maybe called sym) which will have the name of the method that was called 
 # on your object (as a symbol).
 
-
-
 class Spy
     def method_missing sym
     end

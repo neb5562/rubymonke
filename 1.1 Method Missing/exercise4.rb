@@ -30,6 +30,6 @@ class Spy
   end
 
   def method_called?(sym, *args)
-    return @method_calls.include?(MethodCall.new(sym, args))
+    @method_calls.include?(MethodCall.new(sym, args))
   end
 end
