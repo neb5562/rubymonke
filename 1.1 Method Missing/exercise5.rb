@@ -7,9 +7,11 @@
 #     arguments you wish to pass to the method.
 
 class Spy
-    def initialize(enemy_agent)
-      @enemy_agent = enemy_agent
-    end
-  
-    # Write your method_missing here
+  def initialize(enemy_agent)
+    @enemy_agent = enemy_agent
+  end
+
+  def method_missing method_name, *args, &block
+    @enemy_agent.send(method_name, *args)
+  end
 end
