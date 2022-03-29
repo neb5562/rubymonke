@@ -1,6 +1,3 @@
-# Perfect! They'll never catch on. All we need you to do is to come back and report to
-#      us on what they told you.
-
 class MethodCall
   def initialize(sym, args)
     @sym = sym
