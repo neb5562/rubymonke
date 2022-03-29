@@ -5,14 +5,14 @@ def auto_complete(editor)
     if word == "\n"
       throw :eol
     end
-      if editor.template.user_classes.include? word
+    if editor.template.user_classes.include? word
         methods = eval(word.to_s).methods
         build_suggestion(methods)
     end
-      if editor.template.context.methods.include? word
+    if editor.template.context.methods.include? word
         methods = editor.template.context.method(word).parameters
         build_suggestion(methods)
-      end
+    end
   end
 end
 
