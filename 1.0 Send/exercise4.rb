@@ -4,5 +4,6 @@
 # in the array.
 
 def relay(array, data_type)
-    # Write your code here
+    array.map {|s| s.send("to_"+data_type) }
 end
+

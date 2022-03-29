@@ -1,13 +1,19 @@
-# eval isn't exactly safe. Modify the Editor exercise from the last lesson to use 
-# const_get instead of eval to parse the name of the class in the second filter.
-
-# The editor object might be constructed something like this
-# e = Editor.new("class Foo; end")
+editor = Editor.new("class Foo; end")
 
 def auto_complete(e)
-	e.cursor.read do |word|
-    # define your filters here
-	end
+  editor.cursor.read do |word|
+    if word == "\n"
+      throw :eol
+    end
+    if editor.template.user_classes.include? word
+      methods = Module.const_get(word.to_s).methods
+      build_suggestion(methods)
+    end
+    if editor.template.context.methods.include? word
+      methods = editor.template.context.method(word).parameters
+      build_suggestion(methods)
+    end
+  end
 end
 
 def build_suggestion(list)

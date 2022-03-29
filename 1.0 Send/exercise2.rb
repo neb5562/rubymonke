@@ -6,15 +6,15 @@
 #   arguments that get passed down to that method.
 
 class Nomad
-    def initialize(glider)
-      @glider = glider
+  def initialize(glider)
+    @glider = glider
+  end
+
+  def do(action, argument = nil)
+    if argument == nil
+      @glider.send(action)
+    else
+      @glider.send(action,argument)
     end
-  
-    def do(action, argument = nil)
-      if argument == nil
-        # Put your code here
-      else
-        # Put some more code here
-      end
-    end
+  end
 end
