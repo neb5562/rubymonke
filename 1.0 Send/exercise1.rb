@@ -3,11 +3,11 @@
 # This name can either be a symbol or a string.
 
 class Nomad
-    def initialize(glider)
-      @glider = glider
-    end
-  
-    def do(action)
-      # Write your commands here
-    end
+  def initialize(glider)
+    @glider = glider
+  end
+
+  def do(action)
+    @glider.send(action)
+  end
 end
